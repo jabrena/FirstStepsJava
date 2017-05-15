@@ -1,0 +1,29 @@
+textarea {
+    white-space: pre;
+    overflow: scroll;
+    font-size: 10pt;
+    font-family: 'Droid Sans Mono', Menlo, Consolas, 'Courier New', Courier, monospace, sans-serif;
+}
+
+.navbar {
+    background-color: #f0ad4e !important;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+body {
+    background-color: #5bc0de;
+}
+
+.btn-lg  {
+    margin-top: 20px;
+    padding: .75rem 1.5rem;
+    font-size: 1.75rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .book {
+        display: none;
+    }
+}
