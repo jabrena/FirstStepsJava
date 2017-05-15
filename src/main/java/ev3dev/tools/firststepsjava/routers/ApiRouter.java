@@ -1,7 +1,7 @@
-package ev3dev.tools.myfirstjava.routers;
+package ev3dev.tools.firststepsjava.routers;
 
-import ev3dev.tools.myfirstjava.handlers.ApiHandler;
-import ev3dev.tools.myfirstjava.handlers.ErrorHandler;
+import ev3dev.tools.firststepsjava.handlers.ApiHandler;
+import ev3dev.tools.firststepsjava.handlers.ErrorHandler;
 import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 

@@ -1,10 +1,10 @@
-package ev3dev.tools.myfirstjava;
+package ev3dev.tools.firststepsjava;
 
-import ev3dev.tools.myfirstjava.handlers.ApiHandler;
-import ev3dev.tools.myfirstjava.handlers.ErrorHandler;
-import ev3dev.tools.myfirstjava.routers.MainRouter;
-import ev3dev.tools.myfirstjava.services.HelloServiceImpl;
-import ev3dev.tools.myfirstjava.services.HelloService;
+import ev3dev.tools.firststepsjava.handlers.ApiHandler;
+import ev3dev.tools.firststepsjava.handlers.ErrorHandler;
+import ev3dev.tools.firststepsjava.routers.MainRouter;
+import ev3dev.tools.firststepsjava.services.HelloServiceImpl;
+import ev3dev.tools.firststepsjava.services.HelloService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.EnableWebFlux;

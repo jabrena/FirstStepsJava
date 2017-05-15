@@ -1,4 +1,4 @@
-package ev3dev.tools.myfirstjava.routers;
+package ev3dev.tools.firststepsjava.routers;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.reactive.function.server.RouterFunction;

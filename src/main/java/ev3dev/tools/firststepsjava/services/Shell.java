@@ -1,4 +1,4 @@
-package ev3dev.tools.myfirstjava.services;
+package ev3dev.tools.firststepsjava.services;
 
 import lombok.extern.slf4j.Slf4j;
 

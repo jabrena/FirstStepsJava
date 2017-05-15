@@ -1,8 +1,8 @@
-package ev3dev.tools.myfirstjava.handlers;
+package ev3dev.tools.firststepsjava.handlers;
 
-import ev3dev.tools.myfirstjava.model.HelloRequest;
-import ev3dev.tools.myfirstjava.model.HelloResponse;
-import ev3dev.tools.myfirstjava.services.HelloService;
+import ev3dev.tools.firststepsjava.model.HelloRequest;
+import ev3dev.tools.firststepsjava.model.HelloResponse;
+import ev3dev.tools.firststepsjava.services.HelloService;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;

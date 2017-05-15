@@ -1,4 +1,4 @@
-package ev3dev.tools.myfirstjava.model;
+package ev3dev.tools.firststepsjava.model;
 
 public class HelloRequest {
 

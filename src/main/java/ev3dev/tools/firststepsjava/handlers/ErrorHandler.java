@@ -1,8 +1,8 @@
-package ev3dev.tools.myfirstjava.handlers;
+package ev3dev.tools.firststepsjava.handlers;
 
-import ev3dev.tools.myfirstjava.exceptions.InvalidParametersException;
-import ev3dev.tools.myfirstjava.model.ErrorResponse;
-import ev3dev.tools.myfirstjava.exceptions.PathNotFoundException;
+import ev3dev.tools.firststepsjava.exceptions.InvalidParametersException;
+import ev3dev.tools.firststepsjava.model.ErrorResponse;
+import ev3dev.tools.firststepsjava.exceptions.PathNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

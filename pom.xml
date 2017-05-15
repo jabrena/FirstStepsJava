@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ev3dev.tools.firststepsjava</groupId>
-	<artifactId>FirstSTepsJava</artifactId>
-	<version>1.0.9</version>
+	<artifactId>FirstStepsJava</artifactId>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>FirstStepsJava</name>
@@ -64,6 +64,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>ev3dev.tools.firststepsjava.ReactiveMsApplication</mainClass>
+					<layout>ZIP</layout>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,7 +1,7 @@
-package ev3dev.tools.myfirstjava.services;
+package ev3dev.tools.firststepsjava.services;
 
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-import ev3dev.tools.myfirstjava.exceptions.InvalidParametersException;
+import ev3dev.tools.firststepsjava.exceptions.InvalidParametersException;
 import reactor.core.publisher.Mono;
 
 import javax.tools.*;
