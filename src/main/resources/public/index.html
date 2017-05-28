@@ -32,27 +32,26 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-sm-12">
+            <div class="col-lg-6 col-sm-6">
                 <br />
-<pre id="editor" class="editor" data-editor-lang="java" style="height: 450px">
-/**
- * Hello World, is your first program in Java language.
- *
- * @author jabrena
- */
-public class HelloWorld {
+                <select id="combo" class="form-control">
+                    <option value="*">Choose the example</option>
+                    <option value="HelloWorld.java">Hello World</option>
+                    <option value="RandomInteger.java">Random Integer</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <br />
+                <pre id="editor" class="editor" data-editor-lang="java" style="height: 400px">
 
-    /**
-     * The Java Virtual Machine starts up by loading a specified class
-     * and then invoking the method main in this specified class.
-     */
-    public static void main(final String[] args) {
-        System.out.println("Hello world");
-    }
-
-}
 </pre>
                 <div id="info"></div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <br />
+                <div id="terminal" style="background-color:black; color:white !important;">
+
+                </div>
             </div>
         </div>
         <div class="row">
@@ -61,11 +60,6 @@ public class HelloWorld {
                     Compile
                 </a>
                 <br /><br />
-            </div>
-        </div>
-        <div class="row">
-            <div id="terminal" style="background-color:black; color:white !important;">
-
             </div>
         </div>
     </div>
@@ -81,6 +75,14 @@ public class HelloWorld {
     <script src="Scripts/parse.js"></script>
 
     <script>
+    $('#combo').on('change', function() {
+        if(this.value != "*"){
+            //alert( this.value );
+            document.location.href="/index.html?example=" + this.value;
+        }
+    })
+
+
         var apiAddress = "http://localhost:8080/api/hello";
 
         $("#btnCompile").click(function(e) {
