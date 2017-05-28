@@ -62,14 +62,16 @@
                 //$(".text").html(data);
                 //console.log(data);
                 $("#editor").html(data);
+
+                require(["orion/editor/edit"], function(edit) {
+                    window.editor = edit({className: "editor"});
+                    window.editor.getTextView().getModel().addEventListener("Changed", function () { parse(); });
+                    parse(42);
+                });
             }
         });
 
-        require(["orion/editor/edit"], function(edit) {
-            window.editor = edit({className: "editor"});
-            window.editor.getTextView().getModel().addEventListener("Changed", function () { parse(); });
-            parse(42);
-        });
+
     };
 
 })();

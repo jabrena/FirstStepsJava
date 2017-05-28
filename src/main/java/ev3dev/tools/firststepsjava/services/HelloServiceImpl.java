@@ -32,21 +32,30 @@ public class HelloServiceImpl implements HelloService{
     }
 
     @Override
-    public Function<Mono<String>, Mono<Boolean>> compile() {
+    public Function<Mono<String>, Mono<String>> compile() {
 
         return value -> value.flatMap(name -> {
 
             System.out.println(name);
 
+            //Detect className
+            final String pattern ="public class";
+            final int pattern1 = name.indexOf("public class");
+            System.out.println(pattern1);
+            final int pattern2 = name.indexOf("{", pattern1);
+            System.out.println(pattern2);
+            final String className = name.substring(pattern1+pattern.length(),pattern2);
+            System.out.println(className.trim());
+
             final String JAVA_IO_TEMPDIR = System.getProperty("java.io.tmpdir");
-            //System.out.println(JAVA_IO_TEMPDIR);
-            File root = new File(JAVA_IO_TEMPDIR + "/java"); // On Windows running on C:\, this is C:\java.
+            System.out.println(JAVA_IO_TEMPDIR);
+            File root = new File(JAVA_IO_TEMPDIR + "/java");
 
             boolean resultCompilation = false;
 
             try {
 
-                File sourceFile = new File(root, "HelloWorld.java");
+                File sourceFile = new File(root, className.trim() + ".java");
                 sourceFile.getParentFile().mkdirs();
                 Files.write(sourceFile.toPath(), name.getBytes(StandardCharsets.UTF_8));
 
@@ -80,8 +89,11 @@ public class HelloServiceImpl implements HelloService{
                 */
             }
 
+            if(resultCompilation){
+                return Mono.just(className.trim());
+            }
 
-            return Mono.just(resultCompilation);
+            return Mono.just("ERROR");
         });
     }
 
@@ -99,7 +111,7 @@ public class HelloServiceImpl implements HelloService{
     }
 
     @Override
-    public Function<Mono<Boolean>, Mono<String>> run() {
+    public Function<Mono<String>, Mono<String>> run() {
 
         //Execute bytecode
         final String JAVA_IO_TEMPDIR = System.getProperty("java.io.tmpdir");
@@ -111,9 +123,9 @@ public class HelloServiceImpl implements HelloService{
 
         return value -> value.flatMap(name -> {
             System.out.println(name);
-            if(name.equals(true)){
+            if(!name.equals("ERROR")){
 
-                final String resultShell = Shell.execute("java -classpath " + pathJava + " HelloWorld");
+                final String resultShell = Shell.execute("java -classpath " + pathJava + " " + name);
                 //System.out.println("demo: " + resultShell);
 
                 //Shell.execute("ls " + pathJava);

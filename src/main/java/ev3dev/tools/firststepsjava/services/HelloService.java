@@ -9,7 +9,7 @@ public interface HelloService {
 
     Function<Mono<String>, Mono<String>> decode();
 
-    Function<Mono<String>, Mono<Boolean>> compile();
+    Function<Mono<String>, Mono<String>> compile();
 
-    Function<Mono<Boolean>, Mono<String>> run();
+    Function<Mono<String>, Mono<String>> run();
 }
