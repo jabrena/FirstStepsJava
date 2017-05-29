@@ -49,6 +49,11 @@
 
     window.onload = function () {
 
+        var category = getUrlParameter('category');
+        console.log(category);
+        if(category == undefined){
+            category = "java";
+        }
         var example = getUrlParameter('example');
         console.log(example);
         if(example == undefined){
@@ -56,7 +61,7 @@
         }
 
         $.ajax({
-            url : "/examples/" + example,
+            url : "/examples/" + category + "/" +  example,
             dataType: "text",
             success : function (data) {
                 //$(".text").html(data);
