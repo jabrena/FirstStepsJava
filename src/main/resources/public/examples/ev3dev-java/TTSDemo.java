@@ -4,7 +4,7 @@ public class TTSDemo {
 
 	public static void main(String[] args) {
 
-		System.out.println("Testing Espeak on EV3Brick");
+		System.out.println("Testing Espeak on your EV3 Brick");
 
 		Espeak TTS = new Espeak();
 
