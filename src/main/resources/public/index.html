@@ -34,6 +34,15 @@
                     </div>
                 </li>
             </ul>
+            <div id="brick-info" style="display:none;">
+                <form class="form-inline my-2 my-lg-0">
+                    <label class="sr-only" for="inlineFormInput1">IP</label>
+                    <input type="text" class="form-control mb-4 mr-sm-4 mb-sm-0" id="inlineFormInput1" placeholder="robot@192.168.1.206" value="robot@192.168.1.206">
+
+                    <label class="sr-only" for="inlineFormInput2">Password</label>
+                    <input type="text" class="form-control mb-4 mr-sm-4 mb-sm-0" id="inlineFormInput2" placeholder="make" value="maker">
+                </form>
+            </div>
         </div>
     </nav>
 
@@ -55,9 +64,11 @@
         </div>
         <div class="row">
             <div class="col-12" style="text-align: center;">
-                <a href="#" id="btnCompile" class="btn btn-lg btn-success">
-                    Run
-                </a>
+                <div id="java" style="display:none;">
+                    <a href="#" id="btnCompile" class="btn btn-lg btn-success">
+                        Run
+                    </a>
+                </div>
                 <div id="robotics" style="display:none;">
                     <a href="#" id="btnDeploy" class="btn btn-lg btn-success">
                         Run on your brick
@@ -79,6 +90,20 @@
     <script src="Scripts/parse.js"></script>
 
     <script>
+
+        var category = getUrlParameter('category');
+        console.log(category);
+        if(category == undefined){
+            category = "java";
+        }
+
+        if(category === "java"){
+            $("#java").show();
+        }else if(category === "ev3dev-java"){
+            $("#brick-info").show();
+            $("#robotics").show();
+        }
+
         var apiAddress = "http://localhost:8080/api/hello";
 
         $("#btnCompile").click(function(e) {
